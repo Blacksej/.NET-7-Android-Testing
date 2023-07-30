@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">LoginMenuTest</string>
+    <string name="app_text">Hello, World!</string>
+    <string name="login_text">Please Login</string>
+    <string name="login">Login</string>
+
+	<string-array name="countries_array">
+		<item>Bahrain</item>
+		<item>Bangladesh</item>
+		<item>Barbados</item>
+		<item>Belarus</item>
+		<item>Belgium</item>
+		<item>Belize</item>
+		<item>Benin</item>
+	</string-array>
+</resources>

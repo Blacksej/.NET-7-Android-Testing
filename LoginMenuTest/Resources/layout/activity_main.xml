@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login_text"
+        android:layout_centerInParent="true"
+        android:layout_above="@id/username"
+        android:textAllCaps="true"
+        android:textSize="20dip"
+        android:layout_marginBottom="20dip"
+        android:textStyle="bold"
+    />
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:layout_centerInParent="true"
+        android:layout_above="@id/password"
+        android:hint="USERNAME"
+        android:textSize="20dip"
+        android:textColorHint="@android:color/darker_gray"
+        android:layout_marginBottom="5dip"
+        />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:layout_centerInParent="true"
+        android:layout_above="@id/loginbtn1"
+        android:hint="PASSWORD"
+        android:textSize="20dip"
+        android:textColorHint="@android:color/darker_gray"
+        android:layout_marginBottom="20dip"
+        />
+
+    <Button
+        android:id="@+id/loginbtn1"
+        android:layout_width="200dip"
+        android:layout_height="wrap_content"
+        android:text="@string/login"
+        android:layout_centerInParent="true"
+        android:background="#4bbcf6"
+        />
+
+</RelativeLayout>
+
