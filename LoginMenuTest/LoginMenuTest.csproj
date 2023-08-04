@@ -16,6 +16,17 @@
     <Debugger>Xamarin</Debugger>
   </PropertyGroup>
   <ItemGroup>
+    <AndroidJavaSource Remove="ViewModel\**" />
+    <AndroidLibrary Remove="ViewModel\**" />
+    <AndroidNativeLibrary Remove="ViewModel\**" />
+    <Compile Remove="ViewModel\**" />
+    <EmbeddedResource Remove="ViewModel\**" />
+    <JavaSourceJar Remove="ViewModel\**" />
+    <None Remove="ViewModel\**" />
+    <ProguardConfiguration Remove="ViewModel\**" />
+    <TransformFile Remove="ViewModel\**" />
+  </ItemGroup>
+  <ItemGroup>
     <None Remove="Resources\drawable\ic_tab_white.png" />
     <None Remove="Resources\layout\home.xml" />
     <None Remove="Resources\layout\Main.xml" />
@@ -24,8 +35,5 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Acr.UserDialogs" Version="8.0.1" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModel\" />
   </ItemGroup>
 </Project>
