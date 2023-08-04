@@ -85,7 +85,7 @@ namespace LoginMenuTest
                         animatorLoginBtnCorrect.Start();
                         button.Text = "\u2713";
 
-                        LoginConfirmed(animatorLoginBtnCorrect, animatorLoginBtnDenied);
+                        LoginConfirmed(animatorLoginBtnCorrect, animatorLoginBtnDenied, user);
 
                         break;
                     }
@@ -112,7 +112,7 @@ namespace LoginMenuTest
             };
         }
 
-        private async void LoginConfirmed(ObjectAnimator anim1, ObjectAnimator anim2)
+        private async void LoginConfirmed(ObjectAnimator anim1, ObjectAnimator anim2, UserModel user)
         {
             UserDialogs.Instance.ShowLoading("Logging in", MaskType.Gradient);
             await Task.Delay(1500);
@@ -122,6 +122,7 @@ namespace LoginMenuTest
             await Task.Delay(1000);
 
             Intent intent = new Intent(this, typeof(HomeActivity));
+            intent.PutExtra("user_logged_in", user.Name);
             StartActivity(intent);
 
             EditText username = (EditText)FindViewById(Resource.Id.username);

@@ -16,7 +16,10 @@
     <Debugger>Xamarin</Debugger>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Resources\drawable\ic_tab_white.png" />
     <None Remove="Resources\layout\home.xml" />
+    <None Remove="Resources\layout\Main.xml" />
+    <None Remove="Resources\layout\profileTab.xml" />
     <None Remove="Resources\layout\stack_item.xml" />
   </ItemGroup>
   <ItemGroup>
