@@ -24,10 +24,12 @@ namespace LoginMenuTest
             this.ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
 
             Activity activity = this;
+            Intent countriesIntent = new Intent(this, typeof(CountriesActivity));
 
-            AddTab("Back Tab", Resource.Drawable.ic_tab_white, new SampleTabFragment(activity));
+            AddTab("Back Tab", Resource.Drawable.ic_tab_white, new SampleTabFragment(activity, countriesIntent));
             SampleTabFragment2 sampleTabFragment2 = new SampleTabFragment2(str);
             AddTab("Profile", Resource.Drawable.ic_tab_white, sampleTabFragment2);
+
 
 
 
@@ -64,9 +66,11 @@ namespace LoginMenuTest
         class SampleTabFragment : Fragment
         {
             public Activity HomeActivity { get; set; }
-            public SampleTabFragment(Activity homeActivity)
+            public Intent CountriesIntent { get; set; }
+            public SampleTabFragment(Activity homeActivity, Intent countriesIntent)
             {
-                  HomeActivity = homeActivity;
+                HomeActivity = homeActivity;
+                CountriesIntent = countriesIntent;
             }
             public override View OnCreateView(LayoutInflater inflater,
                 ViewGroup container, Bundle savedInstanceState)
@@ -77,6 +81,7 @@ namespace LoginMenuTest
                     Resource.Layout.home, container, false);
 
                 Button backButton = view.FindViewById<Button>(Resource.Id.backButton);
+                Button countriesButton = view.FindViewById<Button>(Resource.Id.countriesBtn);
 
                 backButton.Click += (o, e) =>
                 {
@@ -85,6 +90,13 @@ namespace LoginMenuTest
 
                     HomeActivity.Finish();
                 };
+
+                countriesButton.Click += (o, e) =>
+                {
+                    StartActivity(CountriesIntent);
+                };
+
+
 
                 return view;
             }
@@ -111,7 +123,7 @@ namespace LoginMenuTest
                 if (profileName != null)
                     profileName.Text = ProfileName;
                 else
-                profileName.Text = "No user found";
+                    profileName.Text = "No user found";
 
                 return view;
             }
